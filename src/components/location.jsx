@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion as Motion  } from 'framer-motion';
 import { MapPin, Home, TrendingUp, ArrowRight, Building2, Users } from 'lucide-react';
 
 const LocationsSection = () => {
@@ -69,7 +69,7 @@ const LocationsSection = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
-          <motion.div
+          <Motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -78,7 +78,7 @@ const LocationsSection = () => {
           >
             {/* Heading */}
             <div className="space-y-4">
-              <motion.div
+              <Motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -87,7 +87,7 @@ const LocationsSection = () => {
               >
                 <MapPin className="w-4 h-4 text-blue-600" />
                 <span className="text-blue-600 font-semibold text-sm">PRIME LOCATIONS</span>
-              </motion.div>
+              </Motion.div>
 
               <h2 className="text-4xl md:text-5xl font-bold text-slate-900 leading-tight">
                 Discover Properties in Premium Locations
@@ -99,7 +99,7 @@ const LocationsSection = () => {
             </div>
 
             {/* Stats Grid */}
-            <motion.div
+            <Motion.div
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
@@ -107,7 +107,7 @@ const LocationsSection = () => {
               className="grid grid-cols-2 gap-6"
             >
               {stats.map((stat, index) => (
-                <motion.div
+                <Motion.div
                   key={index}
                   variants={itemVariants}
                   whileHover={{ scale: 1.05, y: -5 }}
@@ -122,23 +122,23 @@ const LocationsSection = () => {
                       <p className="text-sm text-slate-600">{stat.label}</p>
                     </div>
                   </div>
-                </motion.div>
+                </Motion.div>
               ))}
-            </motion.div>
+            </Motion.div>
 
             {/* CTA Button */}
-            <motion.button
+            <Motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="flex items-center gap-3 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group"
             >
               Explore All Locations
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </motion.button>
-          </motion.div>
+            </Motion.button>
+          </Motion.div>
 
           {/* Right - Locations Grid */}
-          <motion.div
+          <Motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -146,7 +146,7 @@ const LocationsSection = () => {
             className="space-y-6"
           >
             {/* Featured Location - Large Card */}
-            <motion.div
+            <Motion.div
               whileHover={{ scale: 1.02 }}
               className="relative h-80 rounded-2xl overflow-hidden shadow-2xl cursor-pointer group"
               onHoverStart={() => setActiveLocation(0)}
@@ -186,12 +186,12 @@ const LocationsSection = () => {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </Motion.div>
 
             {/* Location Thumbnails */}
             <div className="grid grid-cols-3 gap-4">
               {locations.slice(1).map((location, index) => (
-                <motion.div
+                <Motion.div
                   key={location.id}
                   whileHover={{ scale: 1.05, y: -5 }}
                   onClick={() => setActiveLocation(index + 1)}
@@ -214,12 +214,12 @@ const LocationsSection = () => {
                       {location.properties} Properties
                     </p>
                   </div>
-                </motion.div>
+                </Motion.div>
               ))}
             </div>
 
             {/* Additional Info Card */}
-            <motion.div
+            <Motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -243,8 +243,8 @@ const LocationsSection = () => {
                   </button>
                 </div>
               </div>
-            </motion.div>
-          </motion.div>
+            </Motion.div>
+          </Motion.div>
         </div>
       </div>
     </section>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion as Motion, AnimatePresence } from 'framer-motion';
 import { Search, MapPin, Home, DollarSign, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const HeroSection = () => {
@@ -52,7 +52,7 @@ const HeroSection = () => {
     <section className="relative h-screen w-full overflow-hidden">
       {/* Background Slider */}
       <AnimatePresence mode="wait">
-        <motion.div
+        <Motion.div
           key={currentSlide}
           initial={{ opacity: 0, scale: 1.1 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -66,7 +66,7 @@ const HeroSection = () => {
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent"></div>
-        </motion.div>
+        </Motion.div>
       </AnimatePresence>
 
       {/* Navigation Arrows */}
@@ -84,7 +84,7 @@ const HeroSection = () => {
       </button>
 
       {/* Slide Indicators */}
-      <div className="absolute bottom-32 left-1/2 -translate-x-1/2 z-20 flex gap-3">
+      {/* <div className="absolute bottom-32 left-1/2 -translate-x-1/2 z-20 flex gap-3">
         {slides.map((_, index) => (
           <button
             key={index}
@@ -94,39 +94,39 @@ const HeroSection = () => {
             }`}
           />
         ))}
-      </div>
+      </div> */}
 
       {/* Content Container */}
       <div className="relative z-10 h-full flex items-center">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full">
           <div className="max-w-2xl">
             {/* Main Content */}
-            <motion.div
+            <Motion.div
               key={currentSlide}
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               className="space-y-6"
             >
-              <motion.h1
+              <Motion.h1
                 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
               >
                 {slides[currentSlide].title}
-              </motion.h1>
+              </Motion.h1>
               
-              <motion.p
+              <Motion.p
                 className="text-xl md:text-2xl text-white/90 font-light"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
                 {slides[currentSlide].subtitle}
-              </motion.p>
+              </Motion.p>
 
-              <motion.div
+              <Motion.div
                 className="flex gap-4 pt-4"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -150,11 +150,11 @@ const HeroSection = () => {
                     <p className="text-sm text-white/80">Happy Clients</p>
                   </div>
                 </div>
-              </motion.div>
-            </motion.div>
+              </Motion.div>
+            </Motion.div>
 
             {/* Search Box */}
-            <motion.div
+            <Motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
@@ -178,7 +178,7 @@ const HeroSection = () => {
                   ))}
                 </div>
 
-                {/* Search Inputs */}
+                {/* Search Inputs */}   
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   {/* Location */}
                   <div className="relative">
@@ -216,22 +216,22 @@ const HeroSection = () => {
                 </div>
 
                 {/* Search Button */}
-                <motion.button
+                <Motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   className="w-full mt-4 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 group"
                 >
                   <Search className="w-5 h-5 group-hover:scale-110 transition-transform" />
                   Search Properties
-                </motion.button>
+                </Motion.button>
               </div>
-            </motion.div>
+            </Motion.div>
           </div>
         </div>
       </div>
 
       {/* Scroll Indicator */}
-      <motion.div
+      {/* <Motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 1, repeat: Infinity, repeatType: "reverse" }}
@@ -243,7 +243,7 @@ const HeroSection = () => {
             <div className="w-1.5 h-3 bg-white/60 rounded-full"></div>
           </div>
         </div>
-      </motion.div>
+      </Motion.div> */}
     </section>
   );
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion as Motion } from 'framer-motion';
 import { Award, Users, TrendingUp, Shield, Target, Heart, CheckCircle, Star } from 'lucide-react';
 
 const AboutSection = () => {
@@ -78,7 +78,7 @@ const AboutSection = () => {
     <section className="py-20 bg-gradient-to-b from-slate-50 to-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
-        <motion.div
+        <Motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -95,12 +95,12 @@ const AboutSection = () => {
           <p className="text-lg text-slate-600 max-w-3xl mx-auto">
             For over 15 years, we've been helping families find their dream homes and investors discover profitable opportunities across South Florida.
           </p>
-        </motion.div>
+        </Motion.div>
 
         {/* Main Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
           {/* Left - Image & Story */}
-          <motion.div
+          <Motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -127,7 +127,7 @@ const AboutSection = () => {
 
             {/* Small Images Grid */}
             <div className="grid grid-cols-2 gap-4">
-              <motion.div
+              <Motion.div
                 whileHover={{ scale: 1.05 }}
                 className="relative rounded-xl overflow-hidden shadow-lg h-40"
               >
@@ -136,8 +136,8 @@ const AboutSection = () => {
                   alt="Modern Architecture"
                   className="w-full h-full object-cover"
                 />
-              </motion.div>
-              <motion.div
+              </Motion.div>
+              <Motion.div
                 whileHover={{ scale: 1.05 }}
                 className="relative rounded-xl overflow-hidden shadow-lg h-40"
               >
@@ -146,12 +146,12 @@ const AboutSection = () => {
                   alt="Luxury Properties"
                   className="w-full h-full object-cover"
                 />
-              </motion.div>
+              </Motion.div>
             </div>
-          </motion.div>
+          </Motion.div>
 
           {/* Right - Content */}
-          <motion.div
+          <Motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -174,7 +174,7 @@ const AboutSection = () => {
             <div className="space-y-3">
               <h4 className="text-xl font-bold text-slate-900 mb-4">What Sets Us Apart:</h4>
               {features.map((feature, index) => (
-                <motion.div
+                <Motion.div
                   key={index}
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -186,23 +186,23 @@ const AboutSection = () => {
                     <CheckCircle className="w-5 h-5 text-blue-600 group-hover:scale-110 transition-transform" />
                   </div>
                   <p className="text-slate-700">{feature}</p>
-                </motion.div>
+                </Motion.div>
               ))}
             </div>
 
             {/* CTA */}
-            <motion.button
+            <Motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+            //   className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
             >
-              Meet Our Team
-            </motion.button>
-          </motion.div>
+              {/* Meet Our Team */}
+            </Motion.button>
+          </Motion.div>
         </div>
 
         {/* Achievements */}
-        <motion.div
+        {/* <Motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -210,7 +210,7 @@ const AboutSection = () => {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20"
         >
           {achievements.map((achievement, index) => (
-            <motion.div
+            <Motion.div
               key={index}
               variants={itemVariants}
               whileHover={{ y: -10, scale: 1.05 }}
@@ -229,12 +229,12 @@ const AboutSection = () => {
                   {achievement.l}
                 </p>
               </div>
-            </motion.div>
+            </Motion.div>
           ))}
-        </motion.div>
+        </Motion.div> */}
 
         {/* Values Section */}
-        <motion.div
+        <Motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -251,7 +251,7 @@ const AboutSection = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {values.map((value, index) => (
-              <motion.div
+              <Motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -269,13 +269,13 @@ const AboutSection = () => {
                 <p className="text-slate-600 leading-relaxed">
                   {value.description}
                 </p>
-              </motion.div>
+              </Motion.div>
             ))}
           </div>
-        </motion.div>
+        </Motion.div>
 
         {/* Bottom CTA Banner */}
-        <motion.div
+        <Motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -291,23 +291,23 @@ const AboutSection = () => {
               Let's turn your real estate goals into reality. Our team is here to guide you every step of the way.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.button
+              <Motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-8 py-4 bg-white text-blue-600 font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 Schedule Consultation
-              </motion.button>
-              <motion.button
+              </Motion.button>
+              <Motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-8 py-4 bg-transparent border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-blue-600 transition-all duration-300"
               >
                 Browse Properties
-              </motion.button>
+              </Motion.button>
             </div>
           </div>
-        </motion.div>
+        </Motion.div>
       </div>
     </section>
   );
