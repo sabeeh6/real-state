@@ -83,19 +83,6 @@ const HeroSection = () => {
         <ChevronRight className="w-6 h-6 text-white group-hover:scale-110 transition-transform" />
       </button>
 
-      {/* Slide Indicators */}
-      {/* <div className="absolute bottom-32 left-1/2 -translate-x-1/2 z-20 flex gap-3">
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentSlide(index)}
-            className={`h-1.5 rounded-full transition-all duration-300 ${
-              currentSlide === index ? 'w-12 bg-white' : 'w-8 bg-white/50'
-            }`}
-          />
-        ))}
-      </div> */}
-
       {/* Content Container */}
       <div className="relative z-10 h-full flex items-center">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full">
@@ -109,7 +96,7 @@ const HeroSection = () => {
               className="space-y-6"
             >
               <Motion.h1
-                className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight"
+                className="text-5xl md:text-4xl lg:text-5xl font-bold text-white leading-tight"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
